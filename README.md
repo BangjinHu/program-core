@@ -1,2 +1,3 @@
-# LeetCode_Problem
-leetCode刷题记录
+## program-core
+
+力扣刷题和互联网公司测评题
