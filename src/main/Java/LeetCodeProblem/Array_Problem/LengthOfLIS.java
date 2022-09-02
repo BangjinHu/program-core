@@ -1,5 +1,7 @@
 package LeetCodeProblem.Array_Problem;
 
+import java.util.Arrays;
+
 public class LengthOfLIS {
     public static void main(String[] args) {
 
@@ -7,7 +9,7 @@ public class LengthOfLIS {
         System.out.println(lengthOfLIS(arr));
     }
 
-    public static int lengthOfLIS(int[] nums){
+    public static int lengthOfLIS1(int[] nums){
         if (nums.length == 0){
             return 0;
         }
@@ -27,5 +29,24 @@ public class LengthOfLIS {
         return ans;
     }
 
+    public static int lengthOfLIS(int[] nums) {
+        int length = nums.length;
+        if (length < 2) {
+            return length;
+        }
+        int[] dp = new int[length];
+        Arrays.fill(dp, 1);
+        int res = dp[0];
+
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {
+                    dp[i] = Math.max(dp[j] + 1, dp[i]);
+                }
+            }
+            res = Math.max(dp[i], res);
+        }
+        return res;
+    }
 
 }
