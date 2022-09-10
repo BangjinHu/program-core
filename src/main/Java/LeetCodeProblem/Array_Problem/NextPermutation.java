@@ -66,6 +66,19 @@ public class NextPermutation {
             swap(nums, i, j);
         }
         reverse(nums, i + 1);
+
+        int idx = nums.length - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
+        }
+        int j = nums.length - 1;
+        if (i >= 0) {
+            while (j >= 0 && nums[i] >= nums[j]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+        reverse(nums, i + 1);
     }
 
     private static void reverse(int[] nums, int start) {

@@ -74,15 +74,17 @@ public class Trie {
         node.end--;
     }
 
+    class TrieNode {
+        int path;//表示当前节点所能链接到其它节点的个数
+        int end;//表示以当前节点为结尾的单词的个数
+        HashMap<Character, TrieNode> next;//表示当前节点能链接到的所有节点
+        public TrieNode() {
+            path = 0;
+            end = 0;
+            next = new HashMap<>();
+        }
+    }
+
 }
 
-class TrieNode {
-    int path;//表示当前节点所能链接到其它节点的个数
-    int end;//表示以当前节点为结尾的单词的个数
-    HashMap<Character, TrieNode> next;//表示当前节点能链接到的所有节点
-    public TrieNode() {
-        path = 0;
-        end = 0;
-        next = new HashMap<>();
-    }
-}
+
