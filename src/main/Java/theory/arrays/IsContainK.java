@@ -18,7 +18,8 @@ public class IsContainK {
                 return true;
             }else if (matrix[row][col] < K){//2.如果在(row,col)位置处的值小于K，则向下移动
                 row++;
-            }else {//3.否则向左移动
+            }else {
+                //3.否则向左移动
                 col--;
             }
         }
