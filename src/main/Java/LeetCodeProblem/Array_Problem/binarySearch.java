@@ -4,7 +4,7 @@ public class binarySearch {
 
     public static void main(String[] args) {
         int[] nums = new int[]{2, 5, 3, 1, 7, 9};
-        int target = 3;
+        int target = 7;
         System.out.println(binarySearch(nums, target));
     }
 
