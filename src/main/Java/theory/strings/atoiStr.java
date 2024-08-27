@@ -3,7 +3,8 @@ package theory.strings;
 public class atoiStr {
 
     public static void main(String[] args) {
-
+        String number = "32";
+        System.out.println(atoiStr(number));
     }
 
     /**
@@ -11,7 +12,7 @@ public class atoiStr {
      * @param str
      * @return
      */
-    public int atoiStr(String str) {
+    public static int atoiStr(String str) {
         if (str == null || str.length() == 0) {
             return 0;
         }
