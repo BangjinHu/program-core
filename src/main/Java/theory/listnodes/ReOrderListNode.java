@@ -1,9 +1,12 @@
 package theory.listnodes;
 
+import java.util.HashMap;
+
 public class ReOrderListNode {
 
     public static void main(String[] args) {
-
+        HashMap<Object, Object> map = new HashMap<>();
+        
     }
 
     private ListNode reOrderNode(ListNode head) {

@@ -12,16 +12,16 @@ public class LengthOfLongestSubString {
     }
 
     private static int lengthOfLongestSubString(String str) {
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
         int left = 0, right = 0;
         int maxLength = 0;
         while (right < str.length()) {
             char rch = str.charAt(right);
             right++;
-            map.put(rch, map.getOrDefault(rch, 0) + 1);
-            while (map.get(rch) > 1) {
+            window.put(rch, window.getOrDefault(rch, 0) + 1);
+            while (window.get(rch) > 1) {
                 char lch = str.charAt(left);
-                map.put(lch, map.get(lch) - 1);
+                window.put(lch, window.get(lch) - 1);
                 left++;
             }
             maxLength = Math.max(maxLength, right - left);
