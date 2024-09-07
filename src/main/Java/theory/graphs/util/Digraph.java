@@ -1,12 +1,12 @@
-package theory.graphs;
+package theory.graphs.util;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Digraph {
 
-    private int vertexsNum;
-    private int edgesNum;
+    private final int vertexsNum;
+    private final int edgesNum;
     private int[][] arc;
 
     public Digraph(int vertexsNum, int[][] arc) {
@@ -25,6 +25,20 @@ public class Digraph {
         }
     }
 
+    public static void main(String[] args) {
+        int[][] arc = {
+                {0, 3},
+                {1, 0},
+                {1, 2},
+                {2, 0},
+                {2, 1}
+        };
+        Digraph wd = new Digraph(4, arc);
+        for (int i : wd.adj(1)) {
+            System.out.println(i);
+        }
+    }
+
     //用于测试，返回一个顶点的邻接点
     public Iterable<Integer> adj(int vertex) {
         Set<Integer> set = new HashSet<>();
@@ -33,19 +47,5 @@ public class Digraph {
                 set.add(i);
         }
         return set;
-    }
-
-    public static void main(String[] args) {
-        int[][] arc = {
-                {0,3},
-                {1,0},
-                {1,2},
-                {2,0},
-                {2,1}
-        };
-        Digraph wd = new Digraph(4, arc);
-        for(int i : wd.adj(1)) {
-            System.out.println(i);
-        }
     }
 }
